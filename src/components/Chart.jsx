@@ -111,7 +111,15 @@ function Chart({ data }) {
       .attr("y", (d, i) => i * (legendSize + 4) + (legendSize / 2 + 4))
       .attr("font-size", "0.75rem");
   }, []);
-  return <svg ref={chart} className="w-[90vw] h-[70vw] "></svg>;
+  return (
+    <>
+      <div
+        id="tooltip"
+        className="absolute w-auto h-auto bg-emerald-800/90 backdrop-blur-[2px] rounded-[4px] text-white text-xs font-medium p-2 drop-shadow-md pointer-events-none"
+      ></div>
+      <svg ref={chart} className="w-[90vw] h-[70vh] "></svg>;
+    </>
+  );
 }
 
 export default Chart;
