@@ -25,17 +25,20 @@ function App() {
 
   return (
     <main className="w-screen h-screen max-w-screen max-h-screen font-jakarta">
-      <div className="w-full h-full flex flex-col justify-between items-center py-8">
+      <div className="w-full h-full flex flex-col justify-between items-center py-8 relative gap-10">
         <div className="text-neutral-950 text-center space-y-2">
-          <h1 className="text-3xl font-medium">
+          <h1 id="title" className="text-3xl font-medium">
             United States Educational Attainment
           </h1>
-          <p className="text-light">
+          <p id="description" className="text-light">
             Percentage of adults age 25 and older with a bachelor's degree or
             higher (2010-2014)
           </p>
         </div>
-        <div id="tooltip"></div>
+        <div
+          id="tooltip"
+          className="absolute w-auto h-auto bg-emerald-800/90 backdrop-blur-[2px] rounded-[4px] text-white text-xs font-medium p-2 drop-shadow-md pointer-events-none"
+        ></div>
         {data ? <Chart data={data} /> : null}
       </div>
     </main>
